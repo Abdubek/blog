@@ -44,7 +44,7 @@ export default function ListLayout({ posts, title }) {
           </div>
         </div>
         <ul>
-          {!filteredBlogPosts.length && 'No posts found.'}
+          {!filteredBlogPosts.length && <div className="my-4">No posts found.</div>}
           {filteredBlogPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
@@ -60,7 +60,7 @@ export default function ListLayout({ posts, title }) {
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                      <h3 className="text-2xl font-bold leading-8 tracking-tight mb-2">
                         <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
